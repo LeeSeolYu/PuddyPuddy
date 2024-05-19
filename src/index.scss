@@ -1,0 +1,1021 @@
+@import "./utils.scss";
+
+@font-face {
+  font-family: "omyu_pretty";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "omyu_pretty", $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(233, 184, 213, 0.788) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(233, 184, 213, 0.788);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $mint;
+}
+
+.transparent {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.sticky {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+.layout {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 35px 13.93%;
+}
+
+.header {
+  @extend .transparent;
+  @extend .sticky;
+  z-index: 999;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn-absolute {
+  position: absolute;
+}
+
+.back {
+  width: 40px;
+}
+
+// 다크모드
+.light {
+  transform: all 0.25s linear;
+  background: white;
+}
+
+.dark {
+  transform: all 0.25s linear;
+  background: #262626;
+
+  .profile-user-info-text,
+  .notifications-wrapper {
+    color: white;
+  }
+}
+
+// 로딩
+.loading-wrapper {
+  height: 100vh;
+}
+
+// 로그인
+.login,
+.signup {
+  height: 100vh;
+}
+
+.login-form {
+  font-family: "omyu_pretty";
+  background-color: $mint;
+  border: 4px solid $chocolate;
+  border-radius: 12px;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login-email {
+    margin-top: 80px;
+  }
+
+  input,
+  button {
+    font-family: "omyu_pretty";
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 2px solid #502b31;
+    box-sizing: border-box;
+    outline: none;
+    caret-color: $chocolate;
+    font-size: $font-size-medium;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  button {
+    background-color: $button-color;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $button-color;
+  }
+}
+
+.login-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.error-message {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  color: $red;
+}
+
+// 회원가입
+.signup-form {
+  font-family: "omyu_pretty";
+  background-color: $mint;
+  border: 4px solid $chocolate;
+  border-radius: 12px;
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .signup-email {
+    margin-top: 80px;
+  }
+
+  input,
+  button {
+    font-family: "omyu_pretty";
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 2px solid #502b31;
+    box-sizing: border-box;
+    outline: none;
+    caret-color: $chocolate;
+    font-size: $font-size-medium;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  button {
+    background-color: $button-color;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $button-color;
+  }
+}
+
+.signup-logo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+}
+
+.error-message {
+  height: 10px;
+  display: flex;
+  align-items: center;
+  color: $red;
+}
+
+// 헤더
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: $mint;
+  box-shadow: 0 0 1px $chocolate;
+
+  input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: $font-size-medium;
+    background: $white;
+    border-radius: 8px;
+    padding-left: 10px;
+    caret-color: $chocolate;
+  }
+
+  button[type="button"] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: $font-size-medium;
+  }
+
+  &-logo {
+    width: 110px;
+    height: 70px;
+    object-fit: cover;
+    margin-left: 20px;
+  }
+
+  &-search-bar {
+    width: 250px;
+    height: 40px;
+
+    input {
+      font-family: "omyu_pretty";
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &-noti-btn {
+      height: 45px;
+      cursor: pointer;
+    }
+
+    &-post-btn {
+      width: 50px;
+    }
+
+    &-user-info {
+      display: flex;
+      align-items: center;
+      width: 100px;
+      gap: 8px;
+      font-size: $font-size-medium;
+      cursor: pointer;
+      margin-right: 20px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.hover-box {
+  position: absolute;
+  top: 60px;
+  background-color: $mint;
+  border: 1px solid $chocolate;
+  display: none;
+  flex-direction: column;
+  padding: 5px;
+  z-index: 1;
+}
+
+.hover-box.show {
+  display: flex;
+}
+
+// 홈 화면
+.home {
+  width: 100%;
+
+  &-tabs {
+    width: 100%;
+    font-size: $font-size-medium;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    &-tab {
+      background: $mint;
+      color: $chocolate;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 5px 15px;
+
+      &:hover {
+        background: rgba(187, 238, 245, 0.719);
+      }
+
+      &-active {
+        border: 1px solid $chocolate;
+      }
+    }
+  }
+}
+
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+// post box
+.post-box {
+  flex: 0 0 calc(33.33%);
+  background-color: $mint;
+  width: 450px;
+  height: 620px;
+  margin-bottom: 40px;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
+  &-profile {
+    height: 65px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+  }
+
+  &-content-photo {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+  }
+
+  &-content-text {
+    height: 50px;
+    padding: 5px;
+    overflow: auto;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $chocolate;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    // 기타 브라우저용 스크롤바 스타일
+    scrollbar-color: rgb(230, 225, 230) pink; /* Firefox */
+    scrollbar-width: thin; /* Firefox */
+  }
+
+  &-content-hashtag {
+    height: 30px;
+    padding: 5px;
+    overflow: auto;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $chocolate;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    // 기타 브라우저용 스크롤바 스타일
+    scrollbar-color: rgb(230, 225, 230) pink; /* Firefox */
+    scrollbar-width: thin; /* Firefox */
+  }
+
+  &-footer-likes-comments-user-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-footer {
+    padding: 5px;
+
+    &-likes-comments,
+    &-edit-delete {
+      display: flex;
+      gap: 3px;
+    }
+  }
+}
+
+.likes-btn,
+.comments-btn,
+.edit-btn,
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+
+  img {
+    width: 25px;
+    vertical-align: middle;
+  }
+}
+
+.comments-btn {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.delete-btn,
+.edit-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+// post box 사진만
+.post-box-photo-only {
+  position: relative;
+  background-color: $mint;
+  width: 450px;
+  height: 400px;
+  margin-bottom: 40px;
+
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+
+  .post-box-content-photo {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(47, 78, 71, 0.699);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+
+  .post-box-footer-likes-comments {
+    display: none;
+  }
+
+  &:hover .post-box-footer-likes-comments {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .btn-wrapper {
+      display: flex;
+      gap: 3px;
+    }
+  }
+}
+
+// post form (글 작성)
+.post-form-wrapper,
+.post-edit-wrapper {
+  height: 100vh;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: $mint;
+  width: 450px;
+  height: 450px;
+  font-size: $font-size-medium;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &-photo {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    border: 2px solid $chocolate;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-btn {
+      width: 150px;
+    }
+  }
+  &-photoImg-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      background: rgba(233, 184, 213, 0.788);
+      border: none;
+      cursor: pointer;
+      font-family: "omyu_pretty";
+
+      &:hover {
+        background: rgba(240, 170, 212, 0.849);
+      }
+    }
+  }
+
+  &-photoImg {
+    width: 150px;
+    max-height: 160px;
+    object-fit: cover;
+  }
+
+  textarea {
+    outline: none;
+    caret-color: $chocolate;
+    font-family: "omyu_pretty";
+    border: 2px solid $chocolate;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: $font-size-medium;
+  }
+
+  &-hashtag {
+    &-label {
+      padding-right: 5px;
+    }
+
+    span {
+      padding-left: 3px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      border: 2px solid $chocolate;
+      font-family: "omyu_pretty";
+      background-color: transparent;
+      border-radius: 5px;
+      font-size: $font-size-medium;
+      margin-bottom: 10px;
+    }
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  &-submit-area {
+    display: flex;
+    justify-content: right;
+    padding-right: 5px;
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+
+      img {
+        width: 50px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.post-detail-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.post-detail {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 마이페이지
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 30px;
+
+  &-user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    font-size: $font-size-medium;
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    &-photo {
+      border-radius: 50%;
+    }
+
+    &-btn {
+      font-family: "omyu_pretty";
+      font-size: $font-size-medium;
+      background: $mint;
+      color: $chocolate;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 5px;
+
+      &:hover {
+        background: $mint;
+        border: 1px solid $chocolate;
+      }
+    }
+  }
+
+  .tabs {
+    font-size: $font-size-medium;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+
+    .tab {
+      background: $mint;
+      color: $chocolate;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 5px 15px;
+
+      &:hover {
+        background: rgba(187, 238, 245, 0.719);
+      }
+
+      &-active {
+        border: 1px solid $chocolate;
+      }
+    }
+  }
+
+  &-theme {
+    display: flex;
+    justify-content: center;
+
+    &-img {
+      width: 45px;
+      margin-top: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+// 프로필 수정
+.profile-form-wrapper {
+  height: 100vh;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: $mint;
+  width: 450px;
+  height: 350px;
+  font-size: $font-size-medium;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  label {
+    cursor: pointer;
+    background: rgba(233, 184, 213, 0.788);
+    border-radius: 15px;
+    border: 1px solid transparent;
+    padding: 5px;
+
+    &:hover {
+      background: rgba(240, 170, 212, 0.849);
+    }
+  }
+
+  &-user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    &-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    button {
+      font-family: "omyu_pretty";
+      width: 50px;
+      font-size: $font-size-medium;
+      background: rgba(206, 11, 128, 0.856);
+      color: $white;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 5px;
+
+      &:hover {
+        background: rgba(177, 34, 120, 0.849);
+      }
+    }
+
+    input {
+      font-family: "omyu_pretty";
+      font-size: $font-size-medium;
+      border: 1px solid transparent;
+      background: rgba(255, 255, 255, 0.788);
+      padding: 5px;
+      height: 20px;
+      outline: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    &-modify-btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-submit-btn {
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+    width: 100px;
+    margin-left: auto;
+  }
+}
+
+.post-comment {
+  display: flex;
+  flex-direction: column;
+  background-color: $mint;
+  width: 450px;
+  font-size: $font-size-medium;
+  height: 800px;
+}
+
+.comment-boxs {
+  height: 70px;
+  overflow: auto;
+}
+
+.comment-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    caret-color: $chocolate;
+    font-family: "omyu_pretty";
+    border: 2px solid $chocolate;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-size: $font-size-medium;
+  }
+
+  &-submit-area {
+    .comment-form-btn {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+
+      img {
+        width: 35px;
+      }
+    }
+  }
+}
+
+.comments {
+  display: flex;
+  margin: 0 auto;
+  gap: 5px;
+  margin-bottom: 5px;
+  width: 98%;
+
+  .comment-profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .comment-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .comment-info-texts {
+    display: flex;
+    gap: 5px;
+  }
+
+  .comment-info-createdAt {
+    font-size: $font-size-small;
+  }
+
+  .comment-trash {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+}
+
+// 알림
+.notifications-wrapper {
+  height: 100vh;
+}
+
+.notification {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $mint;
+  cursor: pointer;
+
+  &-content {
+    font-size: $font-size-medium;
+  }
+
+  &-createdAt {
+    padding-bottom: 6px;
+  }
+
+  &-isRead {
+    &-unread {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $hotpink;
+    }
+  }
+}
+
+.post-following-btn,
+.post-follow-btn {
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $font-size-medium;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+// 검색 결과 화면
+.search {
+  height: 100vh;
+}
+
+// 공유
+.share {
+  cursor: pointer;
+
+  &-btn {
+    width: 30px;
+  }
+
+  &-edit-delete {
+    display: flex;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,42 @@
+$background: #e9e7e7;
+$mint: #e2f2f0;
+$chocolate: #502b31;
+$red: rgb(205, 4, 4);
+$button-color: #1f7168;
+$white: #ffffff;
+$black: rgb(28, 28, 28);
+$pink: #c490aa;
+$hotpink: rgba(206, 11, 128, 0.856);
+$font-size-medium: 18px;
+$font-size-small: 10px;
+
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$mobile: 360px;
+$tablet: 600px;
+$desktop: 1024px;
+
+@mixin xsMobile {
+  @media (max-width: #{$mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: $mobile) and (max-width: #{$tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
